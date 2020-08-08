@@ -1,0 +1,121 @@
+/*
+    works
+*/
+.works {
+    padding: 60px 10% 60px;
+    background-image: linear-gradient( rgba(brown, 0.2), rgba(skyblue, 0.2),);
+    &__heading {
+        text-align: center;
+    }
+    &__container {
+        display: flex;
+        justify-content: center;
+        margin-right: -5%;
+        height: 100%;
+        padding-bottom: 80px;
+    }
+
+    &__card {
+        flex: 1;
+        text-align: center;
+        margin-right: 5%;
+    }
+}
+
+@include sp {
+    .works {
+        &__container {
+            flex-direction: column;
+            padding-bottom: 30px;
+            margin-bottom: -60px;
+        }
+
+        &__card {
+            width: 80%;
+            margin: 0 auto 60px;
+        }
+    }
+}
+
+.cards {
+    &__img {
+        position: relative;
+        font-size: 0;
+        img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+    }
+    &__title {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        // transform: translate(-50%, -50%);
+        background-color: rgba($color: #000000, $alpha: .2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $fz-base;
+        transition: 0.3s;
+        &:focus, &:hover {
+            background-color: rgba($color: #000000, $alpha: .6);
+        }
+    }
+    &__detail-show {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: -1.5rem;
+            width: .5rem;
+            height: .5rem;
+            border-right: 1px solid currentColor;
+            border-bottom: 1px solid currentColor;
+            transform: translateY(-50%);
+            transform: rotate(-45deg);
+        }
+        &.open::before {
+            transform: rotate(-135deg);
+        }
+    }
+    &__detail {
+        padding-bottom: 50px;
+        position: relative;
+    }
+    &__detail-desc {
+        display: none;
+        position: absolute;
+        a {
+            color: $MainColor;
+            text-decoration: underline;
+        }
+    }
+}
+
+@include sp {
+    .cards {
+        &__img {
+            position: relative;
+            height: 80%;
+            img {
+                width: 100%;
+                height: 160px;
+                object-fit: cover;
+            }
+        }
+
+        &__detail-desc {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+/*
+    works end
+*/

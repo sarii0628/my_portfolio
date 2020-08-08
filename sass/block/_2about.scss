@@ -1,0 +1,68 @@
+/*
+    about
+*/
+.about {
+    padding: 60px 10% 30px;
+    background-image: linear-gradient(rgba(yellow, 0.2), rgba(orangered, 0.2));
+    &__heading {
+        text-align: center;
+    }
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+    &__img {
+        flex: 0 1 30%;
+        padding: 30px;
+        text-align: right;
+        img {
+            width: 170px;
+        }
+    }
+    &__content {
+        flex: 2;
+        padding-left: 10%;
+        dt {
+            color: lighten($color: $MainColor, $amount: 20%);
+        }
+        dd {
+            margin-bottom: 10px;
+        }
+    }
+}
+@include sp {
+    .about {
+        &__container {
+            flex-direction: column;
+        }
+        &__img {
+            text-align: center;
+            
+            img {
+                width: 150px;
+                height: 150px;
+                
+                border-radius: 50%;
+            }
+        }
+        &__content {
+            padding-left: 0;
+        }
+
+    }
+}
+/*
+    about end
+*/
+
+.only-sm {
+    display: none;
+}
+@include sp {
+    .only-lg {
+        display: none;
+    }
+    .only-sm {
+        display: inline-block;
+    }
+}
